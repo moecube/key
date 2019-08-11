@@ -1,0 +1,16 @@
+language: node_js
+node_js: node
+cache:
+  directories:
+    - "$HOME/.npm"
+script: npm run build
+deploy:
+  provider: s3
+  access_key_id: ztDf0fCxr0eCgSIi
+  secret_access_key:
+    secure: "NIWuCMl7Brm4HNIHZlIflbrK8I0Jzl1hNBTBYBwL8WxhqJhkvfCww1cT02tH6DtbzIl0V7MH7KkdMFg6WfPIvM5DGxH+KWmTBFthEu6SkKNNcrosQrNaU0evA3q+euh9WXaBw+I2Y6NinXjxekgqJIob5zZeP0M1zgRGyREjCUnvhN9EQXOMaXkFOyvnQXitNKlRO/eCMiZrzxvcBrkhVtUHiNguhwGOEqKfx7lauClxH7ILvRnDjFN+SvXHH40/UYO2uS2fAwMGsk8lxGbVxwyvShH63HmwFdtYLG7Jp2o/NuPGNcWpj4G8D3DnrM+IN51NxEbYQGdErmHxtQCylnRuXoOQc5S+b3CwADbgyNF/A0LQfi1sCC6XAh8g/UUKKk9J90KXhwkr0NXGrmJ2dML5Krw53E30w46eKsUTw/YmW3cPGBmhrWvGngrv9O14cXJIbLoz/4Ib48KBrFuWHvZoXgRDYYvWEuxoTLOJPYJcS/ErvV3bC1bqbfXIXOV9zAtPUsNehayTsGjK5pu4uoBZfBtPQqSEeFpQvL4xsG4fSzKibp9DOnPJ27QVSSoAyQtrxb/ZHG3TdO+38VnEgU3t+1TKSPLE1joh+KN7iggTLhs4MhjDdKSk7xtOPkVwzdgplwOXhjtPud/nUWppD2GQDLwLUpRt+SmPd9NQawc="
+  bucket: mycard
+  skip_cleanup: true
+  local-dir: dist
+  upload-dir: mobile
+  endpoint: https://minio.mycard.moe:9000
